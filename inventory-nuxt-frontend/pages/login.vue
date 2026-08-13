@@ -39,7 +39,7 @@ async function submit() {
         IM
       </div>
       <h1 class="text-xl font-semibold text-slate-800">{{ config.public.appName }}</h1>
-      <p class="text-sm text-slate-500">Sign in to manage your inventory</p>
+      <p class="text-sm text-slate-500">Sign in to Manage your inventory</p>
     </div>
 
     <form class="card space-y-4 p-6" novalidate @submit.prevent="submit">
