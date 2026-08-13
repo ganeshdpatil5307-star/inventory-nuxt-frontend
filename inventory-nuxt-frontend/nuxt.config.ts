@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Inventory Manager',
+      title: 'Inventory manager',
       htmlAttrs: { lang: 'en' },
       meta: [
         { charset: 'utf-8' },
