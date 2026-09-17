@@ -3,7 +3,10 @@ FROM node:20-alpine AS build
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci
+# No package-lock.json is committed, and `npm ci` aborts without one
+# (npm error code EUSAGE). Use `npm ci` when a lockfile exists, otherwise
+# fall back to `npm install`.
+RUN if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
 
 COPY . .
 ARG NUXT_PUBLIC_API_BASE
